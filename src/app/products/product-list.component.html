@@ -1,0 +1,51 @@
+<div class="card">
+    <div class="card-header"> {{headerText}} </div>
+    <div class="card-body">
+        <div class="row float-left">
+            <div class="col-md-4"> Filter by: </div>
+            <div class="col-md-8">
+                <input type="text" [(ngModel)]='listFilter' />
+            </div>
+        </div>        
+    </div>
+
+    <div>
+        <h4 class="float-left">Filtered by: {{listFilter}}</h4>
+    </div>
+
+        
+    <div class="table-responsive">
+        <div class="table">
+            <thead>
+                <th >
+                    <button class='btn btn-primary' (click)='ToggleImage()'> {{showImage ? 'Hide Image' : 'Show Image'}} </button>
+                </th>
+                <th>Product</th>
+                <th>Code</th>
+                <th>Available</th>
+                <th>Price</th>
+                <th>Rating</th>
+            </thead>
+            <tbody>
+                <ng-container *ngIf="filteredProductList == null || filteredProductList.length == 0; then dataNotExist; else dataExist;">
+                </ng-container>
+
+                <ng-template #dataNotExist>
+                    No data to show
+                </ng-template>
+
+                <ng-template #dataExist>
+                    <tr *ngFor="let product of filteredProductList">
+                        <td><img *ngIf='showImage' [src]='product.ImageUrl' [style.width.px]='thumbnailSize' [style.height.px]='thumbnailSize' [style.margin.px]='thumbnailMargin'></td>
+                        <td>{{product.Name}}</td>
+                        <td>{{product.Code}}</td>
+                        <td>{{product.Available | YesNo}}</td>
+                        <td>{{product.Price | currency: "INR"}}</td>
+                        <td><pm-star [rating]='product.Rating' (ratingClicked)='onRatingClicked($event)'></pm-star></td>
+                    </tr>
+                </ng-template>
+                
+            </tbody>
+        </div>
+    </div>
+</div>
