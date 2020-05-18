@@ -1,8 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<ul class="nav navbar">
+  <li><a [routerLink]="['/home']">Home</a></li>
+  <li><a [routerLink]="['/products']">Products</a></li>
+</ul>
 <div style="text-align:center">
   <h1>
     Welcome to {{title}}!!
   </h1>
   
-  <pm-product></pm-product>
+  <router-outlet></router-outlet>
 </div>
