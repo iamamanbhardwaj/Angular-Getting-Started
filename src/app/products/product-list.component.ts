@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct } from './product';
 import { ProductService } from 'src/Services/ProductService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'pm-product',
@@ -27,7 +28,7 @@ export class ProductListComponent {
     /**
      * Constructor method
      */
-    constructor(private productService: ProductService ) {
+    constructor(private productService: ProductService, private router: Router ) {
       this._listFilter = null;
       this.productService.getProducts().subscribe({
       next: products => {
@@ -45,8 +46,13 @@ export class ProductListComponent {
     value = value.toLocaleLowerCase();
     return this.productList.filter((product: IProduct) => product.Name.toLocaleLowerCase().indexOf(value) !== -1);
   }
+
   onRatingClicked(value: string): void{
     this.headerText = value;
+  }
+
+  onCodeClick(id: number): void {
+    this.router.navigate(['/product', id]);
   }
 }
 

@@ -3,5 +3,13 @@
         {{pagetitle + ': '+ product.Name}}
     </div>
 </div> -->
+<div class="container">
+    <h4 class="h-100 d-flex justify-content-center align-items-center">you landed on product details for product id :{{productId}}</h4>
 
-sasas
+    <div>
+        <button [routerLink]='["/products"]'>Go back router link</button>
+        <br/>
+        <br/>
+        <button (click)='goBack()'>Go back by code</button>
+    </div>
+</div>

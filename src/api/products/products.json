@@ -1,5 +1,6 @@
 [
   {
+    "Id": 1,
     "Name": "Leaf Rake",
     "Code": "GDN-0011",
     "Date": "March 19, 2019",
@@ -9,6 +10,7 @@
     "ImageUrl": "https://i.picsum.photos/id/230/200/200.jpg"
   },
   {
+    "Id": 2,
     "Name": "Garden Cart",
     "Code": "GDN-0023",
     "Date": "March 18, 2019",
@@ -18,6 +20,7 @@
     "ImageUrl": "https://i.picsum.photos/id/239/200/200.jpg"
   },
   {
+    "Id": 3,
     "Name": "Hammer",
     "Code": "TBX-0048",
     "Date": "May 21, 2019",
@@ -27,6 +30,7 @@
     "ImageUrl": "https://i.picsum.photos/id/237/200/200.jpg"
   },
   {
+    "Id": 4,
     "Name": "Saw",
     "Code": "TBX-0022",
     "Date": "May 15, 2019",
@@ -36,6 +40,7 @@
     "ImageUrl": "https://i.picsum.photos/id/235/200/200.jpg"
   },
   {
+    "Id": 5,
     "Name": "Video Game Controller",
     "Code": "GMG-0042",
     "Date": "October 15, 2018",

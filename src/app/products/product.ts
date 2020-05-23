@@ -1,4 +1,5 @@
 export interface IProduct{
+    Id: number;
     Name: string;
     Available: boolean;
     Code: string;

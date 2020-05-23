@@ -34,15 +34,15 @@
                     No data to show
                 </ng-template>
 
-                <ng-template #dataExist>
+                <ng-template #dataExist>                        
                     <tr *ngFor="let product of filteredProductList">
                         <td><img *ngIf='showImage' [src]='product.ImageUrl' [style.width.px]='thumbnailSize' [style.height.px]='thumbnailSize' [style.margin.px]='thumbnailMargin'></td>
-                        <td>{{product.Name}}</td>
-                        <td>{{product.Code}}</td>
+                        <td><a [routerLink]="['/product' , product.Id]">{{product.Name}}</a></td>
+                        <td><a (click)='onCodeClick(product.Id)'>{{product.Code}}</a></td>
                         <td>{{product.Available | YesNo}}</td>
-                        <td>{{product.Price | currency: "INR"}}</td>
+                        <td>{{product.Price}}</td>
                         <td><pm-star [rating]='product.Rating' (ratingClicked)='onRatingClicked($event)'></pm-star></td>
-                    </tr>
+                    </tr>                   
                 </ng-template>
                 
             </tbody>
